@@ -1,5 +1,5 @@
 export type Language = "en-US" | "zh-CN" | "ja-JP" | "ko-KR"
-export type VoiceType = "male" | "female"
+export type VoiceType = "gentle_female" | "caring_male" | "warm_female" | "calm_male" | "male" | "female"
 
 export interface ColorItem {
   active: string

@@ -155,7 +155,7 @@ export default function ChatCard(props: { className?: string }) {
               <input
                 type="text"
                 disabled={disableInputMemo}
-                placeholder="Type a message..."
+                placeholder="和您的陪护助手聊聊吧..."
                 value={inputValue}
                 onChange={handleInputChange}
                 className={cn(

@@ -1,5 +1,5 @@
 import { genUUID } from "./utils"
-import { IOceanBaseSettings, Language } from "@/types"
+import { IOceanBaseSettings, Language, VoiceType } from "@/types"
 import axios from "axios"
 
 export interface StartRequestConfig {
@@ -7,7 +7,7 @@ export interface StartRequestConfig {
   userId: number
   graphName: string
   language: Language
-  voiceType: "male" | "female"
+  voiceType: VoiceType
   prompt?: string
   greeting?: string
   coze_token?: string

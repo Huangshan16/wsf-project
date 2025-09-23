@@ -179,12 +179,20 @@ export const VIDEO_SOURCE_OPTIONS = [
 
 export const VOICE_OPTIONS: VoiceOptionItem[] = [
   {
-    label: "Male",
-    value: "male",
+    label: "温柔女声",
+    value: "gentle_female",
   },
   {
-    label: "Female",
-    value: "female",
+    label: "亲切男声",
+    value: "caring_male",
+  },
+  {
+    label: "温暖女声",
+    value: "warm_female",
+  },
+  {
+    label: "沉稳男声",
+    value: "calm_male",
   },
 ];
 export const COLOR_LIST: ColorItem[] = [
