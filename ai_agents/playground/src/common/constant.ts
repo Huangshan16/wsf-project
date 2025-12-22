@@ -16,32 +16,32 @@ export const DEFAULT_OPTIONS: IOptions = {
   token: "",
 };
 export const DESCRIPTION =
-  "TEN Agent is an open-source multimodal AI agent that can speak, see, and access a knowledge base(RAG).";
+  "晓佑（Xiao You）是一位基于尖端人工智能与深度学习技术打造的居家智能陪护助手。她不是替代人类情感连接，而是提供补充性的支持、信息与温和陪伴。";
 export const LANGUAGE_OPTIONS: LanguageOptionItem[] = [
   {
-    label: "English",
+    label: "英语",
     value: "en-US",
   },
   {
-    label: "Chinese",
+    label: "中文（简体）",
     value: "zh-CN",
   },
   {
-    label: "Korean",
+    label: "韩语",
     value: "ko-KR",
   },
   {
-    label: "Japanese",
+    label: "日语",
     value: "ja-JP",
   },
 ];
 export const GRAPH_OPTIONS: GraphOptionItem[] = [
   {
-    label: "Voice Agent - OpenAI LLM + Azure TTS",
+    label: "语音助手 - OpenAI LLM + Azure TTS",
     value: "va_openai_azure",
   },
   {
-    label: "Voice Agent with Vision - OpenAI LLM + Azure TTS",
+    label: "语音助手（含视觉）- OpenAI LLM + Azure TTS",
     value: "camera_va_openai_azure",
   },
   //{
@@ -56,11 +56,11 @@ export const isRagGraph = (graphName: string) => {
 
 export const VOICE_OPTIONS: VoiceOptionItem[] = [
   {
-    label: "Male",
+    label: "男声",
     value: "male",
   },
   {
-    label: "Female",
+    label: "女声",
     value: "female",
   },
 ];
@@ -72,39 +72,31 @@ export enum VideoSourceType {
 
 export const VIDEO_SOURCE_OPTIONS = [
   {
-    label: "Camera",
+    label: "摄像头",
     value: VideoSourceType.CAMERA,
   },
   {
-    label: "Screen Share",
+    label: "屏幕共享",
     value: VideoSourceType.SCREEN,
   },
 ];
 
 export const COLOR_LIST: ColorItem[] = [
   {
-    active: "#0888FF",
-    default: "#143354",
+    active: "#1FFFD4",
+    default: "#0d2a24",
   },
   {
-    active: "#563FD8",
-    default: "#2C2553",
+    active: "#9BFFE9",
+    default: "#10221f",
   },
   {
-    active: "#18A957",
-    default: "#173526",
+    active: "#0FBF9D",
+    default: "#0c241f",
   },
   {
-    active: "#FFAB08",
-    default: "#423115",
-  },
-  {
-    active: "#FD5C63",
-    default: "#462629",
-  },
-  {
-    active: "#E225B2",
-    default: "#481C3F",
+    active: "#6BFFE0",
+    default: "#0b1f1b",
   },
 ];
 
@@ -126,8 +118,8 @@ export enum EMobileActiveTab {
 }
 
 export const MOBILE_ACTIVE_TAB_MAP = {
-  [EMobileActiveTab.AGENT]: "Agent",
-  [EMobileActiveTab.CHAT]: "Chat",
+  [EMobileActiveTab.AGENT]: "陪护",
+  [EMobileActiveTab.CHAT]: "对话",
 };
 
 export const isLLM = (extensionName: string) => {

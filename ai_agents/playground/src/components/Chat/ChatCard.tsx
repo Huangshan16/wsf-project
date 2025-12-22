@@ -113,7 +113,7 @@ export default function ChatCard(props: { className?: string }) {
               <input
                 type="text"
                 disabled={disableInputMemo}
-                placeholder="Type a message..."
+                placeholder="输入消息..."
                 value={inputValue}
                 onChange={handleInputChange}
                 className={cn(
@@ -134,7 +134,7 @@ export default function ChatCard(props: { className?: string }) {
                 })}
               >
                 <Send className="h-4 w-4" />
-                <span className="sr-only">Send message</span>
+                <span className="sr-only">发送消息</span>
               </Button>
             </form>
           </div>

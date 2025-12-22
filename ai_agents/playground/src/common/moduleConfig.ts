@@ -49,27 +49,27 @@ export const ModuleTypeLabels: Record<
   ModuleRegistry.NonToolModuleType,
   string
 > = {
-  [ModuleRegistry.ModuleType.STT]: "STT (Speech to Text)",
-  [ModuleRegistry.ModuleType.LLM]: "LLM (Large Language Model)",
-  [ModuleRegistry.ModuleType.TTS]: "TTS (Text to Speech)",
-  [ModuleRegistry.ModuleType.V2V]: "LLM v2v (V2V Large Language Model)",
+  [ModuleRegistry.ModuleType.STT]: "STT（语音转文字）",
+  [ModuleRegistry.ModuleType.LLM]: "LLM（大语言模型）",
+  [ModuleRegistry.ModuleType.TTS]: "TTS（文字转语音）",
+  [ModuleRegistry.ModuleType.V2V]: "LLM v2v（语音到语音）",
 };
 
 export const sttModuleRegistry: Record<string, ModuleRegistry.Module> = {
   deepgram_asr_python: {
     name: "deepgram_asr_python",
     type: ModuleRegistry.ModuleType.STT,
-    label: "Deepgram STT",
+    label: "Deepgram 语音识别",
   },
   transcribe_asr_python: {
     name: "transcribe_asr_python",
     type: ModuleRegistry.ModuleType.STT,
-    label: "Transcribe STT",
+    label: "Transcribe 语音识别",
   },
   speechmatics_asr_python: {
     name: "speechmatics_asr_python",
     type: ModuleRegistry.ModuleType.STT,
-    label: "Speechmatics STT",
+    label: "Speechmatics 语音识别",
   },
 };
 
@@ -83,25 +83,25 @@ export const llmModuleRegistry: Record<string, ModuleRegistry.LLMModule> = {
   dify_python: {
     name: "dify_python",
     type: ModuleRegistry.ModuleType.LLM,
-    label: "Dify Chat Bot",
+    label: "Dify 聊天机器人",
     options: { inputModalities: [ModuleRegistry.Modalities.Text] },
   },
   coze_python_async: {
     name: "coze_python_async",
     type: ModuleRegistry.ModuleType.LLM,
-    label: "Coze Chat Bot",
+    label: "Coze 聊天机器人",
     options: { inputModalities: [ModuleRegistry.Modalities.Text] },
   },
   gemini_llm_python: {
     name: "gemini_llm_python",
     type: ModuleRegistry.ModuleType.LLM,
-    label: "Gemini LLM",
+    label: "Gemini 大模型",
     options: { inputModalities: [ModuleRegistry.Modalities.Text] },
   },
   bedrock_llm_python: {
     name: "bedrock_llm_python",
     type: ModuleRegistry.ModuleType.LLM,
-    label: "Bedrock LLM",
+    label: "Bedrock 大模型",
     options: {
       inputModalities: [
         ModuleRegistry.Modalities.Text,
@@ -115,52 +115,52 @@ export const ttsModuleRegistry: Record<string, ModuleRegistry.Module> = {
   azure_tts: {
     name: "azure_tts",
     type: ModuleRegistry.ModuleType.TTS,
-    label: "Azure TTS",
+    label: "Azure 语音合成",
   },
   cartesia_tts: {
     name: "cartesia_tts",
     type: ModuleRegistry.ModuleType.TTS,
-    label: "Cartesia TTS",
+    label: "Cartesia 语音合成",
   },
   cosy_tts_python: {
     name: "cosy_tts_python",
     type: ModuleRegistry.ModuleType.TTS,
-    label: "Cosy TTS",
+    label: "Cosy 语音合成",
   },
   elevenlabs_tts_python: {
     name: "elevenlabs_tts_python",
     type: ModuleRegistry.ModuleType.TTS,
-    label: "Elevenlabs TTS",
+    label: "Elevenlabs 语音合成",
   },
   fish_audio_tts_python: {
     name: "fish_audio_tts_python",
     type: ModuleRegistry.ModuleType.TTS,
-    label: "Fish Audio TTS",
+    label: "Fish Audio 语音合成",
   },
   minimax_tts_python: {
     name: "minimax_tts_python",
     type: ModuleRegistry.ModuleType.TTS,
-    label: "Minimax TTS",
+    label: "Minimax 语音合成",
   },
   polly_tts: {
     name: "polly_tts",
     type: ModuleRegistry.ModuleType.TTS,
-    label: "Polly TTS",
+    label: "Polly 语音合成",
   },
   neuphonic_tts: {
     name: "neuphonic_tts",
     type: ModuleRegistry.ModuleType.TTS,
-    label: "Neuphonic TTS",
+    label: "Neuphonic 语音合成",
   },
   openai_tts_python: {
     name: "openai_tts_python",
     type: ModuleRegistry.ModuleType.TTS,
-    label: "OpenAI TTS",
+    label: "OpenAI 语音合成",
   },
   dubverse_tts: {
     name: "dubverse_tts",
     type: ModuleRegistry.ModuleType.TTS,
-    label: "Dubverse TTS",
+    label: "Dubverse 语音合成",
   },
 };
 
@@ -168,13 +168,13 @@ export const v2vModuleRegistry: Record<string, ModuleRegistry.V2VModule> = {
   openai_v2v_python: {
     name: "openai_v2v_python",
     type: ModuleRegistry.ModuleType.V2V,
-    label: "OpenAI Realtime",
+    label: "OpenAI 实时对话",
     options: { inputModalities: [ModuleRegistry.Modalities.Audio] },
   },
   gemini_v2v_python: {
     name: "gemini_v2v_python",
     type: ModuleRegistry.ModuleType.V2V,
-    label: "Gemini Realtime",
+    label: "Gemini 实时对话",
     options: {
       inputModalities: [
         ModuleRegistry.Modalities.Video,
@@ -185,19 +185,19 @@ export const v2vModuleRegistry: Record<string, ModuleRegistry.V2VModule> = {
   glm_v2v_python: {
     name: "glm_v2v_python",
     type: ModuleRegistry.ModuleType.V2V,
-    label: "GLM Realtime",
+    label: "GLM 实时对话",
     options: { inputModalities: [ModuleRegistry.Modalities.Audio] },
   },
   stepfun_v2v_python: {
     name: "stepfun_v2v_python",
     type: ModuleRegistry.ModuleType.V2V,
-    label: "Stepfun Realtime",
+    label: "Stepfun 实时对话",
     options: { inputModalities: [ModuleRegistry.Modalities.Audio] },
   },
   azure_v2v_python: {
     name: "azure_v2v_python",
     type: ModuleRegistry.ModuleType.V2V,
-    label: "Azure Realtime",
+    label: "Azure 实时对话",
     options: { inputModalities: [ModuleRegistry.Modalities.Audio] },
   },
 };
@@ -206,43 +206,43 @@ export const toolModuleRegistry: Record<string, ModuleRegistry.ToolModule> = {
   vision_analyze_tool_python: {
     name: "vision_analyze_tool_python",
     type: ModuleRegistry.ModuleType.TOOL,
-    label: "Vision Analyze Tool",
+    label: "视觉分析工具",
     options: {},
   },
   weatherapi_tool_python: {
     name: "weatherapi_tool_python",
     type: ModuleRegistry.ModuleType.TOOL,
-    label: "WeatherAPI Tool",
+    label: "天气查询工具",
     options: {},
   },
   bingsearch_tool_python: {
     name: "bingsearch_tool_python",
     type: ModuleRegistry.ModuleType.TOOL,
-    label: "BingSearch Tool",
+    label: "Bing 搜索工具",
     options: {},
   },
   vision_tool_python: {
     name: "vision_tool_python",
     type: ModuleRegistry.ModuleType.TOOL,
-    label: "Vision Tool",
+    label: "视觉工具",
     options: {},
   },
   openai_image_generate_tool: {
     name: "openai_image_generate_tool",
     type: ModuleRegistry.ModuleType.TOOL,
-    label: "OpenAI Image Generate Tool",
+    label: "OpenAI 图像生成工具",
     options: { outputContentText: true },
   },
   computer_tool_python: {
     name: "computer_tool_python",
     type: ModuleRegistry.ModuleType.TOOL,
-    label: "Computer Tool",
+    label: "计算机工具",
     options: { outputContentText: true },
   },
   mcp_client_python: {
     name: "mcp_client_python",
     type: ModuleRegistry.ModuleType.TOOL,
-    label: "MCP Client Tool",
+    label: "MCP 客户端工具",
     options: {},
   },
 };

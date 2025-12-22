@@ -41,8 +41,8 @@ export default function AudioVisualizer(props: AudioVisualizerProps) {
           transition:
             "background-color 0.35s ease-out, transform 0.25s ease-out",
           // transform: transform,
-          backgroundColor: type === "agent" ? "#0888FF" : "#EAECF0",
-          boxShadow: type === "agent" ? "0 0 10px #EAECF0" : "none",
+          backgroundColor: type === "agent" ? "#1FFFD4" : "#D8FFF6",
+          boxShadow: type === "agent" ? "0 0 10px #1FFFD4" : "none",
         };
 
         return <span key={index} style={style} />;

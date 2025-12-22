@@ -87,12 +87,12 @@ export default function PdfSelect() {
         <DialogTrigger asChild>
           <Button variant="outline" size="sm" className="w-fit bg-transparent">
             <FileTextIcon />
-            PDF
+            文档
           </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Upload & Select PDF</DialogTitle>
+            <DialogTitle>上传并选择 PDF</DialogTitle>
           </DialogHeader>
           <UploadPdf onSuccess={onUploadSuccess} />
           <div className="mt-4">
@@ -102,7 +102,7 @@ export default function PdfSelect() {
               disabled={!agentConnected}
             >
               <SelectTrigger>
-                <SelectValue placeholder="Select a PDF file" />
+                <SelectValue placeholder="选择 PDF 文件" />
               </SelectTrigger>
               <SelectContent>
                 {pdfOptions.map((option) => (
@@ -131,7 +131,7 @@ export function UploadPdf({
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!agentConnected) {
-      toast.error("Please connect to agent first");
+      toast.error("请先连接晓佑");
       return;
     }
 
@@ -154,7 +154,7 @@ export function UploadPdf({
       const data = await response.json();
 
       if (data.code === "0") {
-        toast.success(`Upload ${file.name} success`);
+        toast.success(`上传 ${file.name} 成功`);
         const { collection, file_name } = data.data;
         onSuccess?.({
           fileName: file_name,
@@ -164,7 +164,7 @@ export function UploadPdf({
         toast.info(data.msg);
       }
     } catch (err) {
-      toast.error(`Upload ${file.name} failed`);
+      toast.error(`上传 ${file.name} 失败`);
     } finally {
       setUploading(false);
     }
@@ -182,7 +182,7 @@ export function UploadPdf({
           disabled={uploading}
         />
         <Button variant="outline" size="sm" disabled={uploading} asChild>
-          <span>{uploading ? "Uploading..." : "Upload PDF"}</span>
+          <span>{uploading ? "上传中..." : "上传 PDF"}</span>
         </Button>
       </Label>
     </div>

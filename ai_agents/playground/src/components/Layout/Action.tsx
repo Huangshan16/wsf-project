@@ -59,14 +59,14 @@ export default function Action(props: { className?: string }) {
     if (agentConnected) {
       await apiStopService(channel);
       dispatch(setAgentConnected(false));
-      toast.success("Agent disconnected");
+      toast.success("已断开晓佑");
       stopPing();
     } else {
       const selectedGraph = graphList.find(
         (graph) => graph.graph_id === selectedGraphId
       );
       if (!selectedGraph) {
-        toast.error("Please select a graph first");
+        toast.error("请先选择一个图谱");
         setLoading(false);
         return;
       }
@@ -82,16 +82,16 @@ export default function Action(props: { className?: string }) {
       if (code != 0) {
         if (code == "10001") {
           toast.error(
-            "The number of users experiencing the program simultaneously has exceeded the limit. Please try again later."
+            "当前同时在线体验人数已达上限，请稍后再试。"
           );
         } else {
-          toast.error(`code:${code},msg:${msg}`);
+          toast.error(`错误码:${code}，信息:${msg}`);
         }
         setLoading(false);
         throw new Error(msg);
       }
       dispatch(setAgentConnected(true));
-      toast.success("Agent connected");
+      toast.success("晓佑已连接");
       startPing();
     }
     setLoading(false);
@@ -122,15 +122,15 @@ export default function Action(props: { className?: string }) {
       {/* Action Bar */}
       <div
         className={cn(
-          "mx-2 mt-2 flex items-center justify-between rounded-t-lg bg-[#181a1d] p-2 md:m-2 md:rounded-lg",
+          "mx-2 mt-2 flex items-center justify-between rounded-t-lg bg-[#121212] p-2 md:m-2 md:rounded-lg",
           className
         )}
       >
         {/* -- Description Part */}
         <div className="hidden md:block">
-          <span className="font-bold text-sm">Description</span>
+          <span className="font-bold text-sm">角色设定</span>
           <span className="ml-2 whitespace-nowrap text-muted-foreground text-xs">
-            A Realtime Conversational AI Agent powered by TEN
+            您是一位基于尖端人工智能与深度学习技术打造的居家智能陪护助手。不是替代人类情感连接，而是提供补充性的支持、信息与温和陪伴。
           </span>
         </div>
 
@@ -173,10 +173,10 @@ export default function Action(props: { className?: string }) {
                 svgProps={{ className: "h-4 w-4 text-muted-foreground" }}
               >
                 {loading
-                  ? "Connecting"
+                  ? "连接中"
                   : !agentConnected
-                    ? "Connect"
-                    : "Disconnect"}
+                    ? "连接"
+                    : "断开"}
               </LoadingButton>
             </div>
           </div>

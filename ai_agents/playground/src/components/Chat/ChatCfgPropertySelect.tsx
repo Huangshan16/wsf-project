@@ -79,21 +79,20 @@ export function RemotePropertyCfgSheet() {
       </SheetTrigger>
       <SheetContent className="w-[400px] overflow-y-auto sm:w-[540px]">
         <SheetHeader>
-          <SheetTitle>Properties Setting</SheetTitle>
+          <SheetTitle>属性设置</SheetTitle>
           <SheetDescription>
-            You can adjust extension properties for selected graph here, the
-            values will be written into property.json file when you save.
+            在此调整所选图谱的扩展属性，保存后会写入 property.json。
           </SheetDescription>
         </SheetHeader>
 
         <div className="my-4">
-          <Label>Extension</Label>
+          <Label>扩展</Label>
           <Select
             onValueChange={setSelectedExtension}
             value={selectedExtension}
           >
             <SelectTrigger className="mt-2 w-full">
-              <SelectValue placeholder="Select extension" />
+              <SelectValue placeholder="选择扩展" />
             </SelectTrigger>
             <SelectContent>
               {selectedGraph
@@ -134,8 +133,8 @@ export function RemotePropertyCfgSheet() {
                 }
                 if (needUpdate) {
                   await updateGraph(selectedGraph, selectedGraphCopy);
-                  toast.success("Properties updated", {
-                    description: `Graph: ${graphName}, Extension: ${selectedExtension}`,
+                  toast.success("属性已更新", {
+                    description: `图谱: ${graphName}，扩展: ${selectedExtension}`,
                   });
                 }
               }}
@@ -143,7 +142,7 @@ export function RemotePropertyCfgSheet() {
           )
         ) : (
           <SheetDescription>
-            No properties found for the selected extension.
+            所选扩展没有可配置的属性。
           </SheetDescription>
         )}
       </SheetContent>
@@ -193,16 +192,15 @@ export function RemotePropertyAddCfgSheet({
               setSheetOpen(true);
             }}
           >
-            Add
+            添加
           </Button>
         </div>
       </SheetTrigger>
       <SheetContent className="w-[400px] overflow-y-auto sm:w-[540px]">
         <SheetHeader>
-          <SheetTitle>Property Add</SheetTitle>
+          <SheetTitle>添加属性</SheetTitle>
           <SheetDescription>
-            You can add a property into a graph extension node and configure its
-            value.
+            为图谱扩展节点新增属性并配置其值。
           </SheetDescription>
         </SheetHeader>
         {hasRemainingProperties ? (
@@ -214,7 +212,7 @@ export function RemotePropertyAddCfgSheet({
               value={selectedProperty}
             >
               <SelectTrigger className="my-4 w-full">
-                <SelectValue placeholder="Select a property" />
+                <SelectValue placeholder="选择属性" />
               </SelectTrigger>
               <SelectContent>
                 {remainingProperties.map((item) => (
@@ -235,13 +233,13 @@ export function RemotePropertyAddCfgSheet({
                 }
               }}
             >
-              Add
+              添加
             </Button>
           </>
         ) : (
           <>
             <SheetDescription className="my-4">
-              No remaining properties to add.
+              没有可添加的属性。
             </SheetDescription>
             <Button
               type="submit"
@@ -249,7 +247,7 @@ export function RemotePropertyAddCfgSheet({
                 setSheetOpen(false);
               }}
             >
-              OK
+              确定
             </Button>
           </>
         )}
@@ -428,10 +426,10 @@ const GraphCfgForm = ({
             {form.formState.isSubmitting ? (
               <>
                 <LoaderCircleIcon className="h-4 w-4 animate-spin" />
-                <span>Saving...</span>
+                <span>保存中...</span>
               </>
             ) : (
-              "Save changes"
+              "保存更改"
             )}
           </Button>
         </div>

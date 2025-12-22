@@ -35,11 +35,11 @@ export function HeaderRoomInfo() {
   const agentConnected = useAppSelector((state) => state.global.agentConnected);
 
   const roomConnectedText = React.useMemo(() => {
-    return roomConnected ? "TRUE" : "FALSE";
+    return roomConnected ? "是" : "否";
   }, [roomConnected]);
 
   const agentConnectedText = React.useMemo(() => {
-    return agentConnected ? "TRUE" : "FALSE";
+    return agentConnected ? "是" : "否";
   }, [agentConnected]);
 
   return (
@@ -49,7 +49,7 @@ export function HeaderRoomInfo() {
           <TooltipTrigger className="flex items-center space-x-2 font-semibold text-lg">
             <InfoIcon className="h-4 w-4 md:h-5 md:w-5" />
             <span className="hidden text-sm md:inline-block">
-              Channel Name:{" "}
+              频道名称：{" "}
             </span>
             <span className="max-w-24 text-sm md:text-base">{channel}</span>
           </TooltipTrigger>
@@ -57,15 +57,15 @@ export function HeaderRoomInfo() {
             <table className="border-collapse">
               <tbody>
                 <tr>
-                  <td className="pr-2 font-bold text-primary">INFO</td>
+                  <td className="pr-2 font-bold text-primary">信息</td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td className="pr-2">Room:</td>
+                  <td className="pr-2">房间：</td>
                   <td className="text-[#0888FF]">{channel}</td>
                 </tr>
                 <tr>
-                  <td className="pr-2">Participant:</td>
+                  <td className="pr-2">参与者：</td>
                   <td className="text-[#0888FF]">{userId}</td>
                 </tr>
                 <tr>
@@ -75,15 +75,15 @@ export function HeaderRoomInfo() {
                 </tr>
                 <tr>
                   <td className="pr-2 font-bold text-primary" colSpan={2}>
-                    STATUS
+                    状态
                   </td>
                 </tr>
                 <tr>
-                  <td className="pr-2">Room connected:</td>
+                  <td className="pr-2">房间已连接：</td>
                   <td className="text-[#0888FF]">{roomConnectedText}</td>
                 </tr>
                 <tr>
-                  <td className="pr-2">Agent connected:</td>
+                  <td className="pr-2">晓佑已连接：</td>
                   <td className="text-[#0888FF]">{agentConnectedText}</td>
                 </tr>
               </tbody>
@@ -100,7 +100,7 @@ export function HeaderActions() {
     <div className="flex space-x-2 md:space-x-4">
       <NextLink href={GITHUB_URL} target="_blank">
         <GitHubIcon className="h-4 w-4 md:h-5 md:w-5" />
-        <span className="sr-only">GitHub</span>
+        <span className="sr-only">GitHub 仓库</span>
       </NextLink>
       <ThemePalettePopover />
       <NetworkIndicator />
@@ -132,7 +132,7 @@ export const ThemePalettePopover = () => {
         </PopoverTrigger>
         <PopoverContent className="space-y-2 border-none bg-(--background-color,#1C1E22)">
           <div className="font-semibold text-(--Grey-300,#EAECF0) text-sm">
-            STYLE
+            主题
           </div>
           <div className="mt-4 flex gap-3">
             {COLOR_LIST.map((item, index) => {

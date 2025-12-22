@@ -28,7 +28,7 @@ export function RemoteGraphSelect() {
 
   // Get the selected graph's label for display
   const selectedGraph = graphs.find((g) => g.graph_id === graphName);
-  const displayLabel = selectedGraph?.name || "Select Graph";
+  const displayLabel = selectedGraph?.name || "选择图谱";
 
   // Truncate label for display when closed (max 20 chars on mobile, 25 on desktop)
   const truncatedLabel = displayLabel.length > 20
@@ -47,7 +47,7 @@ export function RemoteGraphSelect() {
             "w-auto max-w-[180px] md:max-w-[220px]"
           )}
         >
-          <SelectValue placeholder={"Select Graph"}>
+          <SelectValue placeholder={"选择图谱"}>
             <span className="truncate">{truncatedLabel}</span>
           </SelectValue>
         </SelectTrigger>

@@ -43,10 +43,9 @@ export function TrulienceCfgSheet() {
       </SheetTrigger>
       <SheetContent className="w-[400px] overflow-y-auto sm:w-[540px]">
         <SheetHeader>
-          <SheetTitle>Trulience Avatar</SheetTitle>
+          <SheetTitle>Trulience 虚拟形象</SheetTitle>
           <SheetDescription>
-            You can configure the Trulience Avatar settings here. This will give
-            you a nice avatar for your chat.
+            在此配置 Trulience 虚拟形象设置，为对话展示更直观的陪伴形象。
           </SheetDescription>
         </SheetHeader>
 
@@ -64,8 +63,8 @@ export function TrulienceCfgSheet() {
             onUpdate={async (data) => {
               if (data.enable_trulience_avatar === true) {
                 if (!data.trulience_avatar_id) {
-                  toast.error("Trulience Settings", {
-                    description: `Please provide Trulience Avatar ID`,
+                  toast.error("Trulience 设置", {
+                    description: "请填写 Trulience Avatar ID",
                   });
                   return;
                 }
@@ -81,8 +80,8 @@ export function TrulienceCfgSheet() {
                   animationURL: data.trulience_animation_url as string,
                 })
               );
-              toast.success("Trulience Settings", {
-                description: `Settings updated successfully`,
+              toast.success("Trulience 设置", {
+                description: "设置已更新",
               });
             }}
           />
@@ -123,7 +122,7 @@ const TrulienceCfgForm = ({
           name={"enable_trulience_avatar"}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Enable Trulience Avatar</FormLabel>
+              <FormLabel>启用 Trulience 虚拟形象</FormLabel>
               <div className="flex items-center justify-between">
                 <FormControl>
                   <div className="flex items-center space-x-2">
@@ -168,7 +167,7 @@ const TrulienceCfgForm = ({
               name={"trulience_avatar_token"}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Trulience Avatar Token</FormLabel>
+                  <FormLabel>Trulience Avatar 令牌</FormLabel>
                   <div className="flex items-center justify-between">
                     <FormControl>
                       <Input
@@ -191,7 +190,7 @@ const TrulienceCfgForm = ({
               name={"trulience_large_window"}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Trulience Large Window</FormLabel>
+                  <FormLabel>使用大窗口展示虚拟形象</FormLabel>
                   <div className="flex items-center justify-between">
                     <FormControl>
                       <div className="flex items-center space-x-2">
@@ -211,7 +210,7 @@ const TrulienceCfgForm = ({
               name={"trulience_sdk_url"}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Trulience SDK URL</FormLabel>
+                  <FormLabel>Trulience SDK 地址</FormLabel>
                   <div className="flex items-center justify-between">
                     <FormControl>
                       <Input
@@ -234,7 +233,7 @@ const TrulienceCfgForm = ({
               name={"trulience_animation_url"}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Trulience Animation URL</FormLabel>
+                  <FormLabel>Trulience 动画地址</FormLabel>
                   <div className="flex items-center justify-between">
                     <FormControl>
                       <Input
@@ -257,10 +256,10 @@ const TrulienceCfgForm = ({
           {form.formState.isSubmitting ? (
             <>
               <LoaderCircleIcon className="h-4 w-4 animate-spin" />
-              <span>Saving...</span>
+              <span>保存中...</span>
             </>
           ) : (
-            "Save changes"
+            "保存设置"
           )}
         </Button>
       </form>

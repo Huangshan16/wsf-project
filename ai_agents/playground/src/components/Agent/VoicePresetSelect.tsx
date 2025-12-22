@@ -25,7 +25,7 @@ export default function AgentVoicePresetSelect() {
     <Select value={voiceType} onValueChange={onVoiceChange}>
       <SelectTrigger className="w-[180px]">
         <div className="inline-flex items-center gap-2">
-          <SelectValue placeholder="Voice" />
+          <SelectValue placeholder="声音" />
         </div>
       </SelectTrigger>
       <SelectContent>

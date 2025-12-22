@@ -27,9 +27,9 @@ export const ScreenIconByStatus = (
 ) => {
   const { active, color, ...rest } = props;
   if (active) {
-    return <MonitorIcon color={color || "#3D53F5"} {...rest} />;
+    return <MonitorIcon color={color || "#1FFFD4"} {...rest} />;
   }
-  return <MonitorXIcon color={color || "#667085"} {...rest} />;
+  return <MonitorXIcon color={color || "#4A4A4A"} {...rest} />;
 };
 
 export function VideoDeviceWrapper(props: {
@@ -112,7 +112,7 @@ export default function VideoBlock(props: {
 
   return (
     <VideoDeviceWrapper
-      title="VIDEO"
+      title="视频"
       Icon={
         videoSourceType === VideoSourceType.CAMERA
           ? CamIconByStatus
@@ -150,7 +150,7 @@ interface SelectItem {
 }
 
 const DEFAULT_ITEM: SelectItem = {
-  label: "Default",
+  label: "默认设备",
   value: "default",
   deviceId: "",
 };
@@ -191,7 +191,7 @@ const CamSelect = (props: { videoTrack?: ICameraVideoTrack }) => {
       items={items}
       value={value}
       onChange={onChange}
-      placeholder="Select a camera"
+      placeholder="选择摄像头"
     />
   );
 };

@@ -8,9 +8,9 @@ import { StoreProvider } from "@/store";
 import "./global.css";
 
 export const metadata: Metadata = {
-  title: "TEN Agent | Real-Time Multimodal AI Agent",
+  title: "晓佑 | 居家智能陪护助手",
   description:
-    "TEN Agent is an open-source multimodal AI agent that can speak, see, and access a knowledge base(RAG).",
+    "晓佑（Xiao You）是一位基于尖端人工智能与深度学习技术打造的居家智能陪护助手，作为温和的陪伴者与信息支持，补充而非替代人类的情感连接。",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black",
@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="zh-CN" suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
         {/* <ConfigProvider
           theme={{

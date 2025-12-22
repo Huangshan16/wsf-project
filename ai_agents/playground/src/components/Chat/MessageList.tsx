@@ -60,7 +60,7 @@ export function MessageItem(props: { data: IChatItem }) {
         ) : null}
         <div className="max-w-[80%] rounded-lg bg-secondary p-2 text-secondary-foreground">
           {data.data_type === EMessageDataType.IMAGE ? (
-            <img src={data.text} alt="chat" className="w-full" />
+            <img src={data.text} alt="对话图片" className="w-full" />
           ) : (
             <p
               className={

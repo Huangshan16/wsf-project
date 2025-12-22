@@ -154,10 +154,9 @@ export function RemoteModuleCfgSheet() {
       </SheetTrigger>
       <SheetContent className="w-[400px] overflow-y-auto sm:w-[540px]">
         <SheetHeader>
-          <SheetTitle>Module Picker</SheetTitle>
+          <SheetTitle>模块选择</SheetTitle>
           <SheetDescription>
-            You can adjust STT/TTS/LLM/LLMv2v extension modules here, the values
-            will be written into property.json file when you save.
+            在此调整 STT/TTS/LLM/LLMv2v 扩展模块，保存后会写入 property.json。
           </SheetDescription>
         </SheetHeader>
 
@@ -181,7 +180,7 @@ export function RemoteModuleCfgSheet() {
                   "agora_rtc"
                 );
                 if (!agoraRtcNode) {
-                  toast.error("agora_rtc node not found in the graph");
+                  toast.error("在图谱中未找到 agora_rtc 节点");
                   return;
                 }
 
@@ -269,7 +268,7 @@ export function RemoteModuleCfgSheet() {
                       );
 
                       if (!toolModule) {
-                        toast.error(`Module ${tool} not found`);
+                        toast.error(`未找到模块 ${tool}`);
                         return;
                       }
 
@@ -307,12 +306,12 @@ export function RemoteModuleCfgSheet() {
                 // Perform the update if changes are detected
                 if (needUpdate) {
                   await updateGraph(selectedGraph, selectedGraphCopy);
-                  toast.success("Modules updated", {
-                    description: `Graph: ${selectedGraphCopy.graph_id}`,
+                  toast.success("模块已更新", {
+                    description: `图谱: ${selectedGraphCopy.graph_id}`,
                   });
                 }
               } catch (e: any) {
-                toast.error(`Failed to update modules: ${e}`);
+                toast.error(`更新模块失败: ${e}`);
               }
             }}
           />
@@ -421,7 +420,7 @@ const GraphModuleCfgForm = ({
                                     icon={<ChevronRightIcon size={15} />}
                                     className="flex justify-between"
                                   >
-                                    Add Tools
+                                    添加工具
                                   </DropdownMenuSubTrigger>
                                   <DropdownMenuPortal>
                                     <DropdownMenuSubContent
@@ -454,7 +453,7 @@ const GraphModuleCfgForm = ({
                                         ))
                                       ) : (
                                         <DropdownMenuItem disabled>
-                                          No compatible tools
+                                          暂无可用工具
                                         </DropdownMenuItem>
                                       )}
                                     </DropdownMenuSubContent>
@@ -472,7 +471,7 @@ const GraphModuleCfgForm = ({
                         >
                           <SelectTrigger>
                             <SelectValue
-                              placeholder={`Select a ${key.toUpperCase()} option`}
+                              placeholder={`选择 ${key.toUpperCase()} 选项`}
                             />
                           </SelectTrigger>
                           <SelectContent>
@@ -528,10 +527,10 @@ const GraphModuleCfgForm = ({
           {form.formState.isSubmitting ? (
             <>
               <LoaderCircleIcon className="h-4 w-4 animate-spin" />
-              <span>Saving...</span>
+              <span>保存中...</span>
             </>
           ) : (
-            "Save changes"
+            "保存更改"
           )}
         </Button>
       </form>
