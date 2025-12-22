@@ -308,7 +308,11 @@ class OpenAIChatGPT:
                     else ""
                 )
 
-                if reasoning_mode is None and reasoning_content is not None:
+                if not is_reasoning_model and reasoning_content and not content:
+                    content = reasoning_content
+                    reasoning_content = ""
+
+                if reasoning_mode is None and reasoning_content:
                     reasoning_mode = ReasoningMode.ModeV1
 
                 # Emit content update event (fire-and-forget)
