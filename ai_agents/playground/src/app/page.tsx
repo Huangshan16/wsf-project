@@ -61,19 +61,19 @@ export default function Home() {
             }
           )}
         >
-          <DynamicRTCCard
+            <DynamicRTCCard
               className={cn(
-                "m-0 flex w-full flex-1 rounded-b-lg bg-[#121212] md:w-[480px] md:rounded-lg",
+                "m-0 flex w-full min-w-0 flex-1 rounded-b-lg bg-[#e8daca] md:w-[480px] md:flex-none md:rounded-lg",
                 {
                   ["hidden md:flex"]: mobileActiveTab === EMobileActiveTab.CHAT,
                 }
               )}
-          />
+            />
 
           {(!useTrulienceAvatar || isCompactLayout || !avatarInLargeWindow) && (
             <DynamicChatCard
               className={cn(
-                "m-0 w-full flex-auto rounded-b-lg bg-[#121212] md:rounded-lg",
+                "m-0 w-full flex-auto rounded-b-lg bg-[#e8daca] md:rounded-lg",
                 {
                   ["hidden md:flex"]:
                     mobileActiveTab === EMobileActiveTab.AGENT,
@@ -85,7 +85,7 @@ export default function Home() {
           {useTrulienceAvatar && avatarInLargeWindow && (
             <div
               className={cn("w-full", {
-                ["h-60 flex-auto bg-[#121212] p-1"]: isCompactLayout,
+                ["h-60 flex-auto bg-[#e8daca] p-1"]: isCompactLayout,
                 ["hidden md:block"]: mobileActiveTab === EMobileActiveTab.CHAT,
               })}
             >

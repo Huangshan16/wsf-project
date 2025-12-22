@@ -27,9 +27,9 @@ export const ScreenIconByStatus = (
 ) => {
   const { active, color, ...rest } = props;
   if (active) {
-    return <MonitorIcon color={color || "#1FFFD4"} {...rest} />;
+    return <MonitorIcon color={color || "#A8C3B1"} {...rest} />;
   }
-  return <MonitorXIcon color={color || "#4A4A4A"} {...rest} />;
+  return <MonitorXIcon color={color || "#5A4E3F"} {...rest} />;
 };
 
 export function VideoDeviceWrapper(props: {

@@ -83,20 +83,20 @@ export const VIDEO_SOURCE_OPTIONS = [
 
 export const COLOR_LIST: ColorItem[] = [
   {
-    active: "#1FFFD4",
-    default: "#0d2a24",
+    active: "#A8C3B1",
+    default: "#e8daca",
   },
   {
-    active: "#9BFFE9",
-    default: "#10221f",
+    active: "#F2B880",
+    default: "#f4e8da",
   },
   {
-    active: "#0FBF9D",
-    default: "#0c241f",
+    active: "#6B8E6E",
+    default: "#e8daca",
   },
   {
-    active: "#6BFFE0",
-    default: "#0b1f1b",
+    active: "#5A4E3F",
+    default: "#e8daca",
   },
 ];
 

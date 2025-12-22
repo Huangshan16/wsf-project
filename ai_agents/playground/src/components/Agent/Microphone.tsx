@@ -56,7 +56,7 @@ export default function MicrophoneBlock(props: {
       isActive={!audioMute}
       select={<MicrophoneSelect audioTrack={audioTrack} />}
     >
-      <div className="mt-3 flex h-12 flex-col items-center justify-center gap-2.5 self-stretch rounded-md border border-[#1c1c1c] bg-[#121212] p-2 shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]">
+      <div className="mt-3 flex h-12 flex-col items-center justify-center gap-2.5 self-stretch rounded-md border border-[#e0e0e0] bg-[#f4e8da] p-2 shadow-[0px_2px_2px_0px_rgba(90,78,63,0.08)]">
         <AudioVisualizer
           type="user"
           barWidth={4}

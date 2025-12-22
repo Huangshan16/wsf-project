@@ -158,7 +158,7 @@ export default function RTCCard(props: { className?: string }) {
             </div>
           ) : (
             !isCompactLayout && (
-              <ChatCard className="m-0 h-full w-full rounded-b-lg bg-[#121212] md:rounded-lg" />
+              <ChatCard className="m-0 h-full w-full rounded-b-lg bg-[#e8daca] md:rounded-lg" />
             )
           )
         ) : (

@@ -122,7 +122,7 @@ export default function Action(props: { className?: string }) {
       {/* Action Bar */}
       <div
         className={cn(
-          "mx-2 mt-2 flex items-center justify-between rounded-t-lg bg-[#121212] p-2 md:m-2 md:rounded-lg",
+          "mx-2 mt-2 flex items-center justify-between rounded-t-lg bg-[#e8daca] p-2 md:m-2 md:rounded-lg",
           className
         )}
       >
@@ -130,7 +130,7 @@ export default function Action(props: { className?: string }) {
         <div className="hidden md:block">
           <span className="font-bold text-sm">角色设定</span>
           <span className="ml-2 whitespace-nowrap text-muted-foreground text-xs">
-            您是一位基于尖端人工智能与深度学习技术打造的居家智能陪护助手。不是替代人类情感连接，而是提供补充性的支持、信息与温和陪伴。
+            一位基于尖端人工智能与深度学习技术打造的居家智能陪护助手。不是替代人类情感连接，而是提供补充性的支持、信息与温和陪伴。
           </span>
         </div>
 

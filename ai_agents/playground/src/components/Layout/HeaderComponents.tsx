@@ -53,7 +53,7 @@ export function HeaderRoomInfo() {
             </span>
             <span className="max-w-24 text-sm md:text-base">{channel}</span>
           </TooltipTrigger>
-          <TooltipContent className="bg-(--background-color,#1C1E22) text-gray-600">
+          <TooltipContent className="bg-(--background-color,#f4e8da) text-[#5A4E3F]">
             <table className="border-collapse">
               <tbody>
                 <tr>
@@ -62,15 +62,15 @@ export function HeaderRoomInfo() {
                 </tr>
                 <tr>
                   <td className="pr-2">房间：</td>
-                  <td className="text-[#0888FF]">{channel}</td>
+                  <td className="text-[#6B8E6E]">{channel}</td>
                 </tr>
                 <tr>
                   <td className="pr-2">参与者：</td>
-                  <td className="text-[#0888FF]">{userId}</td>
+                  <td className="text-[#6B8E6E]">{userId}</td>
                 </tr>
                 <tr>
                   <td colSpan={2}>
-                    <hr className="my-2 border-gray-600 border-t" />
+                    <hr className="my-2 border-[#E0E0E0] border-t" />
                   </td>
                 </tr>
                 <tr>
@@ -80,11 +80,11 @@ export function HeaderRoomInfo() {
                 </tr>
                 <tr>
                   <td className="pr-2">房间已连接：</td>
-                  <td className="text-[#0888FF]">{roomConnectedText}</td>
+                  <td className="text-[#6B8E6E]">{roomConnectedText}</td>
                 </tr>
                 <tr>
                   <td className="pr-2">晓佑已连接：</td>
-                  <td className="text-[#0888FF]">{agentConnectedText}</td>
+                  <td className="text-[#6B8E6E]">{agentConnectedText}</td>
                 </tr>
               </tbody>
             </table>
@@ -130,7 +130,7 @@ export const ThemePalettePopover = () => {
         <PopoverTrigger>
           <PaletteIcon className="h-4 w-4 md:h-5 md:w-5" color={themeColor} />
         </PopoverTrigger>
-        <PopoverContent className="space-y-2 border-none bg-(--background-color,#1C1E22)">
+        <PopoverContent className="space-y-2 border-none bg-(--background-color,#f4e8da)">
           <div className="font-semibold text-(--Grey-300,#EAECF0) text-sm">
             主题
           </div>

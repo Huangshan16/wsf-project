@@ -480,9 +480,9 @@ export const MicIconByStatus = (
 ) => {
   const { active, color, ...rest } = props;
   if (active) {
-    return <MicActiveIcon color={color || "#1FFFD4"} {...rest} />;
+    return <MicActiveIcon color={color || "#A8C3B1"} {...rest} />;
   }
-  return <MicMuteIcon color={color || "#4A4A4A"} {...rest} />;
+  return <MicMuteIcon color={color || "#5A4E3F"} {...rest} />;
 };
 
 export const CameraDisabledIcon = (props: React.SVGProps<SVGSVGElement>) => {
@@ -526,7 +526,7 @@ export const CamIconByStatus = (
 ) => {
   const { active, color, ...rest } = props;
   if (active) {
-    return <CameraActiveIcon color={color || "#1FFFD4"} {...rest} />;
+    return <CameraActiveIcon color={color || "#A8C3B1"} {...rest} />;
   }
-  return <CameraDisabledIcon color={color || "#4A4A4A"} {...rest} />;
+  return <CameraDisabledIcon color={color || "#5A4E3F"} {...rest} />;
 };

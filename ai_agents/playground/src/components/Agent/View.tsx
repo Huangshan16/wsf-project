@@ -32,7 +32,7 @@ export default function AgentView(props: AgentViewProps) {
     videoTrack ? (
       <div
         id={`remote-video-${videoTrack.getUserId()}`}
-        className="relative w-full overflow-hidden bg-[#121212]"
+        className="relative w-full max-w-full overflow-hidden bg-[#e8daca]"
         style={{ minHeight: '240px', height: '240px', position: 'relative' }}
       >
       </div>
@@ -40,7 +40,7 @@ export default function AgentView(props: AgentViewProps) {
       <div
         className={cn(
           "flex w-full flex-col items-center justify-center px-4",
-          "bg-[#121212] bg-linear-to-br from-[rgba(31,255,212,0.18)] via-[rgba(18,18,18,0.00)] to-[#0b1f1b] shadow-[0px_4px_40px_0px_rgba(31,255,212,0.12)] backdrop-blur-[7px]"
+          "bg-[#e8daca] bg-linear-to-br from-[rgba(242,184,128,0.45)] via-[rgba(232,218,202,0.55)] to-[#f4e8da] shadow-[0px_4px_40px_0px_rgba(107,142,110,0.18)] backdrop-blur-[7px]"
         )}
         style={{ minHeight: '240px', height: '240px' }}
       >
