@@ -109,8 +109,8 @@ class ElevenLabsTTS2Synthesizer:
 
     def _process_ws_exception(self, exp) -> None | Exception:
         """Handle websocket connection exceptions and decide whether to reconnect"""
-        self.ten_env.log_debug(
-            f"Websocket internal error during connecting: {exp}."
+        self.ten_env.log_warn(
+            f"WebSocket connect retry {self._connect_exp_cnt + 1}/5 failed: {exp}"
         )
         self._connect_exp_cnt += 1
         if self._connect_exp_cnt > 5:  # MAX_RETRY_TIMES_FOR_TRANSPORT
@@ -180,8 +180,8 @@ class ElevenLabsTTS2Synthesizer:
                         continue
 
         except Exception as e:
-            self.ten_env.log_debug(
-                f"vendor_status:  connection closed as {e}",
+            self.ten_env.log_error(
+                f"vendor_status: websocket processing failed: {e}",
                 category=LOG_CATEGORY_VENDOR,
             )
         finally:
@@ -301,6 +301,7 @@ class ElevenLabsTTS2Synthesizer:
         try:
             # Mark receive loop as ready
             self._receive_ready_event.set()
+            request_audio_count = 0
 
             while self._session_closing == False:
                 message = await ws.recv()
@@ -328,6 +329,7 @@ class ElevenLabsTTS2Synthesizer:
                     elapsed_time = None
                     if data.get("audio"):
                         audio_data = base64.b64decode(data["audio"])
+                        request_audio_count += 1
                         self.receive_count += 1
                         if (
                             self.request_start_ts is not None
@@ -349,6 +351,10 @@ class ElevenLabsTTS2Synthesizer:
                         )
 
                     if isFinal:
+                        if self.cur_request_id and request_audio_count == 0:
+                            self.ten_env.log_error(
+                                f"Received final message without audio for request_id: {self.cur_request_id}"
+                            )
                         self.ten_env.log_info(
                             "Received final message from WebSocket"
                         )
@@ -391,7 +397,7 @@ class ElevenLabsTTS2Synthesizer:
             )
             raise
         except Exception as e:
-            self.ten_env.log_debug(
+            self.ten_env.log_error(
                 f"vendor_status: Exception in receive_loop: {e}",
                 category=LOG_CATEGORY_VENDOR,
             )
