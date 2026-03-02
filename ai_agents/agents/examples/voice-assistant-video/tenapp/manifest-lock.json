@@ -621,6 +621,23 @@
     },
     {
       "type": "extension",
+      "name": "siliconflow_tts2_python",
+      "version": "0.1.0",
+      "hash": "def265f32a96b0ccca744505075ae76c4e56f5e099697054881e2749b51ad96d",
+      "dependencies": [
+        {
+          "type": "system",
+          "name": "ten_runtime_python"
+        },
+        {
+          "type": "system",
+          "name": "ten_ai_base"
+        }
+      ],
+      "path": "../../../ten_packages/extension/siliconflow_tts2_python"
+    },
+    {
+      "type": "extension",
       "name": "polly_tts",
       "version": "0.5.4",
       "hash": "e2550055690c134b3ca60c752abc2d83b6ddf26d9e3ae67e31c40ef9c4efacd3",
